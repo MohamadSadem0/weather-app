@@ -21,6 +21,17 @@ const App = () => {
     };
 
     fetchData();
+    //  const b = {
+    //    ...weatherData.forecast.forecastday
+    //  };
+    //  console.log(b.forecast);
+
+    // let days = [];
+    // console.log(days[0].date);
+    // const date = new Date(response.forcast);
+
+    // const options = { weekday: "long" };
+    // const dayName = new Intl.DateTimeFormat("en-US", options).format(date);
   }, []);
 
   return (

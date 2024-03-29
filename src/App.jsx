@@ -21,18 +21,18 @@ const App = () => {
     };
 
     fetchData();
-    //  const b = {
-    //    ...weatherData.forecast.forecastday
-    //  };
-    //  console.log(b.forecast);
-
-    // let days = [];
-    // console.log(days[0].date);
-    // const date = new Date(response.forcast);
-
-    // const options = { weekday: "long" };
-    // const dayName = new Intl.DateTimeFormat("en-US", options).format(date);
   }, []);
+  //  const b = {
+  //    ...weatherData.forecast.forecastday
+  //  };
+  //  console.log(b.forecast);
+
+  // let days = [];
+  // console.log(days[0].date);
+  // const date = new Date(response.forcast);
+
+  // const options = { weekday: "long" };
+  // const dayName = new Intl.DateTimeFormat("en-US", options).format(date);
 
   return (
     <div className="App">
@@ -40,12 +40,15 @@ const App = () => {
       <div>Beirut</div>
       <div className="bck-grey">
         <div className="cards">
-          <Card
-            date="Today"
-            iconLink={RainCloudIcon}
-            temperature={32}
-            condition={weatherData?.current?.condition?.text}
-          />
+          {weatherData.forecast
+            .map(forecas=>(
+            <Card
+            key={`${forecas.forecastday.date}`}
+              date={forecas.forecastday.date}
+              iconLink={RainCloudIcon}
+              temperature={}
+              condition={weatherData?.current?.condition?.text}/>
+          ))}
         </div>
       </div>
     </div>
